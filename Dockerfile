@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-EXPOSE 9999
+EXPOSE 80
 
 RUN apt-get update
 RUN apt-get install -y openjdk-11-jdk-headless 
