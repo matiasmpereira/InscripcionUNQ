@@ -20,5 +20,19 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+
+    - name: Use Node.js and Angula CLI
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - run: npm install -g @angular/cli
+    - name: Install npm deps
+    - run: cd src/main/webapp/inscripcionUNQ-app
+    - run: npm install
+    - name: Build Angular files to statics for production
+    - run: ng build --prod
+
     - name: Build with Maven
       run: mvn install && ls -l target
+
+    
